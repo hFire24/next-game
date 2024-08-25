@@ -1,0 +1,196 @@
+body {
+  background-color: black;
+  font-family: 'Barlow Semi Condensed', Futura MdCn BT, AvenirNextCondensed-Italic, sans-serif;
+  color: white;
+  font-size: 30px; /* Adjusted font size */
+  text-align: center;
+  margin-top: 25px;
+}
+
+a {
+  color: white;
+}
+
+input[type='text'], select, button {
+  font-family: 'Barlow Semi Condensed', Futura MdCn BT, AvenirNextCondensed-Italic, sans-serif;
+  font-size: 18px; /* Adjusted font size */
+}
+
+.custom-select, input[type='text'].custom-select, .custom-button {
+  font-size: 24px; /* Adjusted font size */
+}
+
+h1, h2, h3, h4, b, strong {
+  font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
+}
+
+h1 {
+  font-size: 60px; /* Adjusted font size */
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 45px; /* Adjusted font size */
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 36px; /* Adjusted font size */
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+#message {
+  font-size: 60px; /* Adjusted font size */
+}
+
+#instructions, .no-space {
+  margin-bottom: 0px;
+}
+
+input:where([type='checkbox'], [type='radio']) {
+  -webkit-appearance:none;
+  width:25px; /* Adjusted size */
+  height:25px; /* Adjusted size */
+  background:#F00;
+  border-radius:5px;
+  border:2px solid #555;
+}
+
+input:where([type='checkbox'], [type='radio']):checked {
+  background:#0F0;
+}
+
+.small input:where([type='checkbox'], [type='radio']) {
+  width:20px; /* Adjusted size */
+  height:20px; /* Adjusted size */
+}
+
+td {
+  padding: 7px;
+  font-size: 24px; /* Adjusted font size */
+}
+
+.good-button {
+  background-color: #4caf50; /* Green */
+  color:white;
+}
+
+.bad-button {
+  background-color: #f44336; /* Red */
+  color:white;
+}
+
+.hfire-link {
+  color:white;
+  text-decoration:none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.four-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Added back space class */
+.space {
+  margin-top: 20px;
+}
+
+/* Tooltip information */
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+  transition: all 0.15s ease;
+  padding: 10px;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px silver;
+  font-size: 50%;
+}
+
+[data-tooltip]:hover:before {
+  opacity: 1;
+  background: yellow;
+  margin-top: -50px;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 1702px) {
+  h1, #message {
+    font-size: 48px; /* Adjusted font size */
+  }
+  h2 {
+    font-size: 36px; /* Adjusted font size */
+  }
+  h3 {
+    font-size: 30px; /* Adjusted font size */
+  }
+  body, td, .custom-select, input[type='text'].custom-select, .custom-button {
+    font-size: 24px; /* Adjusted font size */
+  }
+  input:where([type='checkbox'], [type='radio']) {
+    width:20px; /* Adjusted size */
+    height:20px; /* Adjusted size */
+  }
+}
+
+@media only screen and (max-width: 1135px) {
+  h1, #message {
+    font-size: 40px; /* Adjusted font size */
+  }
+  h2 {
+    font-size: 32px; /* Adjusted font size */
+  }
+  h3 {
+    font-size: 28px; /* Adjusted font size */
+  }
+}
+
+@media only screen and (max-width: 851px) {
+  h1, #message {
+    font-size: 32px; /* Adjusted font size */
+  }
+  h2 {
+    font-size: 28px; /* Adjusted font size */
+  }
+  h3 {
+    font-size: 24px; /* Adjusted font size */
+  }
+  body, td {
+    font-size: 20px; /* Adjusted font size */
+  }
+  .custom-select, input[type='text'].custom-select, .custom-button, .expand {
+    font-size:16px;
+  }
+  input:where([type='checkbox'], [type='radio']) {
+    width:18px; /* Adjusted size */
+    height:18px; /* Adjusted size */
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  h1, #message {
+    font-size: 28px; /* Adjusted font size */
+  }
+  h2 {
+    font-size: 24px; /* Adjusted font size */
+  }
+  h3 {
+    font-size: 20px; /* Adjusted font size */
+  }
+  body, td {
+    font-size: 18px; /* Adjusted font size */
+  }
+  input:where([type='checkbox'], [type='radio']) {
+    width:15px; /* Adjusted size */
+    height:15px; /* Adjusted size */
+  }
+  .four-list {
+    grid-template-columns: 1fr 1fr; /* Adjust for smaller screens */
+  }
+}

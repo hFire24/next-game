@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Your current games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="csshake.css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body>
+    <h1 id='message'>Your current games</h1>
+    <div class='space'>If you can't decide what to play, just select one at random.<br>
+    <div class='space'><button class='custom-button' onclick='randomGame()'>Random game</button></div>
+    <div id='diceResults' class='space'></div>
+    <div class='four-list space'>
+      <a data-tooltip="⬅️⬇️⬆️➡️ Feel the rhythm and step to the beat!" class='hfire-link' href='stepmania.html'>Stepmania</a>
+      <a data-tooltip="♠️♥️♣️♦️ Master the deck, conquer the blinds!" class='hfire-link'>Balatro</a>
+      <a data-tooltip="💥 Classic shooter action!" class='hfire-link'>Doom II</a>
+      <a data-tooltip="🛠️ Smash and create in a destructible world!" class='hfire-link'>Teardown</a>
+      <a data-tooltip="🚿 The ultimate cleaning experience!" class='hfire-link'>PowerWash Simulator</a>
+      <a data-tooltip="🚗 Realistic car crashes and physics!" class='hfire-link'>BeamNG.drive</a>
+      <a data-tooltip="🚚 Take on the open road!" class='hfire-link'>American Truck Simulator</a>
+      <a data-tooltip="🚛 Explore Europe with your trucking empire!" class='hfire-link'>Euro Truck Simulator 2</a>
+      <a data-tooltip="🚓 High-speed chases and adrenaline!" class='hfire-link'>Need for Speed: Hot Pursuit</a>
+      <a data-tooltip="🌌 Dive into the world of goddesses!" class='hfire-link'>Cyberdimension Neptunia</a>
+      <a data-tooltip="👯‍♀️ A bunny girl adventure!" class='hfire-link'>Rabi-Ribi</a>
+      <a data-tooltip="🃏 Build your deck and serve your ladies!" class='hfire-link'>Tanto Cuore</a>
+      <a data-tooltip="🏝️ A story that will move your heart!" class='hfire-link'>ISLAND</a>
+      <a data-tooltip="🍊 It's more than just juice!" class='hfire-link'>100% Orange Juice</a>
+      <a data-tooltip="🎶 Keep the beat, don't miss a step!" class='hfire-link'>A Dance of Fire and Ice</a>
+      <a data-tooltip="🎯 Defend your territory from balloons!" class='hfire-link'>Bloons Tower Defense 6</a>
+      <a data-tooltip="⛏️ Craft, build, and explore infinite worlds!" class='hfire-link'>Minecraft</a>
+      <a data-tooltip="🧠 Exercise your mind with puzzles!" class='hfire-link' href='https://sudoku.com/'>Sudoku</a>
+      <a data-tooltip="🗝️ Challenge yourself with daily puzzles!" class='hfire-link' href='https://www.nytimes.com/crosswords'>Crossword</a>
+    </div>    
+    <script>
+      var diceRoll = 0;
+      const shakeTime = 750;
+      const links = document.getElementsByTagName("a");
+
+      function randomGame() {
+        diceRoll = Math.floor(Math.random() * links.length);
+        diceResults.innerHTML = `Play ${links[diceRoll].innerHTML}`
+        shake(shakeTime);
+      }
+
+      function shake(time) {
+        let shake = "shake-horizontal";
+        diceResults.classList.add("shake-constant");
+        diceResults.classList.add(shake);
+        setTimeout(() => {
+          diceResults.classList.remove("shake-constant");
+          diceResults.classList.remove(shake);
+        }, time);
+      }
+
+      for(let i = 0; i < links.length; i++) {
+        let x = Math.floor(Math.random() * 128);
+        let y = Math.floor(Math.random() * 128);
+        let z = Math.floor(Math.random() * 32) + 96;
+        let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        links[i].style.backgroundColor = bgColor;
+      }
+    </script>
+  </body>
+</html>
